@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "First time creating backend app from scratch",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "repository": "https://github.com/Mykolb/webdb-iii-challenge.git",
   "author": "Mykol Benning",
   "license": "MIT",
