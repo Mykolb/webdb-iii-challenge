@@ -14,6 +14,7 @@ const cohortDb = knex(knexConfig);
 
 //******REQUESTS*********
 //GET 
+//WORKING
 router.get('/', (req, res) => {
     //select * from cohortDb
     cohortDb('cohorts')
@@ -28,11 +29,12 @@ router.get('/', (req, res) => {
 
 //GET by ID 
 //select * from roles where id = :id
+//Working
 router.get('/:id', (req, res) => {
  cohortDb('cohorts')
     .where({ id: req.params.id })
     .first()
-    .then(zoo => {
+    .then(cohort => {
         if(cohort) {
           res.status(200).json(cohort);
         } else {
@@ -45,6 +47,7 @@ router.get('/:id', (req, res) => {
 });
 
 //POST 
+//WORKING
 router.post('/', (req, res) => {
     if (!req.body.name) {
         res.status(404).json({ message: 'The name associated with with this cohort could not be found'})
