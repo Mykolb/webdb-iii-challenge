@@ -65,8 +65,9 @@ router.post('/', (req, res) => {
    
 
 //PUT 
+//Working
 router.put('/:id', (req, res) => {
-    zooDb('cohorts')
+    cohortDb('cohorts')
     .where({ id: req.params.id})
     .update(req.body)
     .then(cohort => {
@@ -82,8 +83,9 @@ router.put('/:id', (req, res) => {
 })
 
 //DELETE 
+//WORKING
 router.delete('/:id', (req, res) => {
-    zooDb('cohorts')
+    cohortDb('cohorts')
     .where({ id: req.params.id})
     .del()
     .then(cohort => {
