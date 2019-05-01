@@ -1,0 +1,20 @@
+{
+  "name": "webdb-iii-app",
+  "version": "1.0.0",
+  "description": "First time creating backend app from scratch",
+  "main": "index.js",
+  "repository": "https://github.com/Mykolb/webdb-iii-challenge.git",
+  "author": "Mykol Benning",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "knex": "^0.16.5",
+    "morgan": "^1.9.1",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
