@@ -12,9 +12,9 @@ exports.up = function(knex, Promise) {
 
       //foreign key 
       tbl
-      .integer('cohort_id')
+      .integer('cohorts_id')
       .unsigned()
-      .references('id')
+      .references('cohort_id')
       .inTable('cohorts') //table we want to reference
       .onDelete('CASCADE')
       .onUpdate('CASCADE')

@@ -46,6 +46,28 @@ router.get('/:id', (req, res) => {
     })
 });
 
+//GET FOR STUDENTS WITH COHORT ID
+router.get('/:id/students', (req, res) => {
+    const id = req.params.id;
+
+    cohortDb('cohorts')
+       .join("students", "students.cohort_id", "cohorts.id")
+       .select("students.id", "students.name") 
+       .where("cohort_id", id)
+       .first()
+       .then(students => {
+           if(students) {
+             res.status(200).json(students);
+           } else {
+           res.status(404).json({ message: 'The student associated with this id cannot be found' });
+           }
+       })
+       .catch(err => {
+           res.status(500).json({ error: err, message: 'There was an error retrieving the data'})
+       })
+   });
+
+
 //POST 
 //WORKING
 router.post('/', (req, res) => {

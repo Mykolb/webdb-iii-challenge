@@ -4,7 +4,7 @@ const morgan = require('morgan');
 
 //router
 const cohortsRouter = require('./routes/cohorts-router');
-// const studentsRouter = require('./routes/students-router');
+const studentsRouter = require('./routes/students-router');
 const server = express();
 
 
@@ -14,7 +14,7 @@ server.use(morgan('dev'));
 
 
 server.use('/api/cohorts', cohortsRouter);
-// server.use('/api/students', studentsRouter);
+server.use('/api/students', studentsRouter);
 
 server.get('/', (req, res) => {
     res.send(`
