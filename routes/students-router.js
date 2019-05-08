@@ -29,8 +29,9 @@ router.get('/', (req, res) => {
 
 //GET by ID 
 //
-router.get('/:id/students', (req, res) => {
+router.get('/:id', (req, res) => {
  studentDb('students')
+    .join()
     .where({ id: req.params.id })
     .first()
     .then(student => {

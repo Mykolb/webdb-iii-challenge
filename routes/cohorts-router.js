@@ -55,9 +55,9 @@ router.get('/:id/students', (req, res) => {
        .select("students.id", "students.name") 
        .where("cohort_id", id)
        .first()
-       .then(students => {
-           if(students) {
-             res.status(200).json(students);
+       .then(id => {
+           if(id) {
+             res.status(200).json(id);
            } else {
            res.status(404).json({ message: 'The student associated with this id cannot be found' });
            }
