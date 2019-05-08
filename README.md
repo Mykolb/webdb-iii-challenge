@@ -17,12 +17,12 @@ Use knex migrations to create a database called `lambda.db3` and add the followi
 
 - `id`: primary key, auto-increments.
 - `name`: text, required.
-
+_tbale
 #### students
 
 - `id`: primary key, auto-increments.
 - `name`: text, required.
-- `cohort_id`: references the `id` in the cohorts table.
+- `cohort_id`: references the `id` in the cohorts table. (foreign key)
 
 Use knex seeding feature to add test data to your tables.
 
